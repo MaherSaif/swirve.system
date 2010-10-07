@@ -1,0 +1,23 @@
+
+this is my setup for terminals.  Tested only in OS X.
+
+The color scheme is based off of ir_black from infinitered
+http://blog.infinitered.com
+which links to a git repository
+
+I also liked a lot of his dotfiles, and so use those too
+http://github.com/twerth/dotfiles
+
+The command line is pretty much Phil!'s
+http://aperiodic.net/phil/prompt/
+with some slight modifications for os x
+
+USAGE
+
+My files require you to retrieve twerth's dotfiles repository 
+and then run setup.sh.  
+RUN setup.sh FROM ITS DIRECTORY, as in, './setup.sh'
+
+
+
+
