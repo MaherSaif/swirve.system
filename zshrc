@@ -97,6 +97,7 @@ PS1="%{${fg[red]}%}%B%n@%m] %b%{${fg[default]}%}"
 RPROMPT="%{${fg[red]}%}%B%~%b%{${fg[default]}%}"
 
 # "u 3" will resolve to cd ../../../
+# very handy for deeply nested directories
 u ()
 {
   ud=".";
@@ -104,8 +105,14 @@ u ()
       ud="${ud}/..";
   }
   cd $ud;
+}
+
+# I always ls when entering a new directory
+chpwd ()
+{
   ls;
 }
+
 
 # open firefox, not tied to current term
 alias ff='nohup firefox&'
