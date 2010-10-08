@@ -1,4 +1,5 @@
 
+
 this is my setup for terminals.  Tested only in OS X.
 
 The color scheme is based off of ir_black from infinitered
@@ -18,6 +19,22 @@ My files require you to retrieve twerth's dotfiles repository
 and then run setup.sh.  
 RUN setup.sh FROM ITS DIRECTORY, as in, './setup.sh'
 
+I these scripts use seq, which isn't on os x for some reason
+To get it, I use macports http://guide.macports.org/ and then 
+sudo ln -s /opt/local/bin/gseq /opt/local/bin/seq
+Seeing as how you need to install the [g]seq command anyway, 
+there wasn't much use in putting this in the setup script 
+
+Also, for the command prompt to function correctly in os x, 
+you need to set the you need to set the terminal to be strict 
+vt-100.  Do this by checking 'Strict VT-100 keypad behavior' 
+under Terminal=>Preferences=>Settings=>Advanced
+
+I also use Visor to have a hotkey to the terminal, which 
+helpfully also includes terminal colors.  This is key 
+in OS X since the dark blue is basically unreadable
+in the default color.  
+http://visor.binaryage.com/
 
 
 

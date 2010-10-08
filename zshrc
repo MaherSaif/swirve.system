@@ -2,10 +2,9 @@
 if [ -x /usr/libexec/path_helper ]; then
       eval `/usr/libexec/path_helper -s`
 fi
-#echo "path is now $PATH"
+echo "path is now $PATH"
 
-# export PATH=
-# path=(                                     \
+export PATH=/opt/local/bin:$PATH                             
 #     ~/bin                               \
 #     ~/usr/bin                           \
 #     /usr/local/bin                      \
@@ -105,6 +104,7 @@ u ()
       ud="${ud}/..";
   }
   cd $ud;
+  ls;
 }
 
 # open firefox, not tied to current term

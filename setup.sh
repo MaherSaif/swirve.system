@@ -31,3 +31,8 @@ echo "created symlink to .vim in infinitered folder"
 
 cp -f $currDir/ir_black.vim $directory/etc/vim/colors/ir_black.vim
 echo "overwrite ir_black color with the good one"
+
+if which seq > /dev/null; then
+  echo "seq not found in path.  some functions may not work.  see README"
+fi
+
