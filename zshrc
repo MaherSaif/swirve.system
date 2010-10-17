@@ -2,7 +2,6 @@
 if [ -x /usr/libexec/path_helper ]; then
       eval `/usr/libexec/path_helper -s`
 fi
-echo "path is now $PATH"
 
 export PATH=/usr/local/bin:/opt/local/bin:$PATH                             
 #     ~/bin                               \
@@ -20,6 +19,7 @@ export PATH=/usr/local/bin:/opt/local/bin:$PATH
 #     $PATH
 #   )
 
+echo "path is now $PATH"
 autoload colors
 colors
 
