@@ -4,7 +4,7 @@ if [ -x /usr/libexec/path_helper ]; then
 fi
 echo "path is now $PATH"
 
-export PATH=/opt/local/bin:$PATH                             
+export PATH=/usr/local/bin:/opt/local/bin:$PATH                             
 #     ~/bin                               \
 #     ~/usr/bin                           \
 #     /usr/local/bin                      \
