@@ -133,3 +133,10 @@ export LSCOLORS=exfxcxdxbxexexabagacad
 
 source ~/.zshrc.cmdprompt
 
+#rvm installation
+#http://rvm.beginrescueend.com/
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+#Fink installation 
+#http://www.finkproject.org/download/srcdist.php 
+source /sw/bin/init.sh 
