@@ -3,7 +3,7 @@ if [ -x /usr/libexec/path_helper ]; then
       eval `/usr/libexec/path_helper -s`
 fi
 
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:$PATH                             
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:$PATH:/Library/PostgreSQL/9.0/bin
 #     ~/bin                               \
 #     ~/usr/bin                           \
 #     /usr/local/bin                      \
@@ -111,6 +111,20 @@ u ()
 chpwd ()
 {
   ls;
+}
+
+# simply creates a copy of the file with .bk affixed
+bk ()
+{
+  `mv ${1-1} ${1-1}.bk`
+}
+
+# swap 2 files 
+swap () 
+{
+  `mv ${1-1} /tmp/${1-1}.tempswapfile`
+  `mv ${2-1} ${1-1}`
+  `mv /tmp/${1-1}.tempswapfile ${2-1}`
 }
 
 
