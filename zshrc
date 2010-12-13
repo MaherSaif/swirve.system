@@ -116,7 +116,7 @@ chpwd ()
 # simply creates a copy of the file with .bk affixed
 bk ()
 {
-  `mv ${1-1} ${1-1}.bk`
+  `cp ${1-1} ${1-1}.bk`
 }
 
 # swap 2 files 
