@@ -99,7 +99,7 @@ colorscheme ir_black
 " Status Line *****************************************************************
 set showcmd
 set ruler " Show ruler
-"set ch=2 " Make command line two lines high
+set ch=2 " Make command line two lines high
 
 
 " Line Wrapping ***************************************************************
@@ -272,7 +272,7 @@ map <Leader>rs :RS<CR>
 " |                               Startup                                     |
 " -----------------------------------------------------------------------------  
 " Open NERDTree on start
-"autocmd VimEnter * exe 'NERDTree' | wincmd l 
+autocmd VimEnter * exe 'NERDTree' | wincmd l 
 
 
 

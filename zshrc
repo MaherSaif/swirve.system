@@ -122,9 +122,9 @@ bk ()
 # swap 2 files 
 swap () 
 {
-  `mv ${1-1} /tmp/${1-1}.tempswapfile`
-  `mv ${2-1} ${1-1}`
-  `mv /tmp/${1-1}.tempswapfile ${2-1}`
+  `mv $1 /tmp/$1.tempswapfile`
+  `mv $2 $1`
+  `mv /tmp/$1.tempswapfile $2`
 }
 
 
