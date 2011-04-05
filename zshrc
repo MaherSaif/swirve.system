@@ -94,7 +94,7 @@ compinit
 # End of lines added by compinstall
 
 PS1="%{${fg[red]}%}%B%n@%m] %b%{${fg[default]}%}"
-RPROMPT="%{${fg[red]}%}%B%~%b%{${fg[default]}%}"
+RPROMPT="%{${fg[red]}%}%B%-%b%{${fg[default]}%}"
 
 # "u 3" will resolve to cd ../../../
 # very handy for deeply nested directories
@@ -150,7 +150,18 @@ source ~/.zshrc.cmdprompt
 #rvm installation
 #http://rvm.beginrescueend.com/
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+rvm_project_rvmrc_default=1
 
 #Fink installation 
 #http://www.finkproject.org/download/srcdist.php 
 source /sw/bin/init.sh 
+
+export AUTOFEATURE=true 
+export RSPEC=true
+
+# anyone else want a better migrate?
+# http://blog.voxdolo.me/twiki.html
+twiki () {
+  # say -v Zarvox 'beedee-beedee-beedee'
+  rake db:migrate && rake db:migrate:redo && rake db:test:prepare
+}
