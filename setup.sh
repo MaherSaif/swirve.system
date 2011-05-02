@@ -13,6 +13,14 @@ echo "created symlink to zshrc"
 ln -sf $currDir/zshrc.cmdprompt ~/.zshrc.cmdprompt 
 echo "created symlink to zshrc.cmdprompt"
 
+# gitconfig 
+ln -sf $currDir/gitconfig ~/.gitconfig
+echo "created symlink to gitconfig"
+
+# gemrc
+ln -sf $currDir/gemrc ~/.gemrc
+echo "created symlink to gemrc"
+
 # prepare the vimrc
 cp $directory/etc/vim/vimrc $currDir/vimrc 
 sed '/.*LongLineWarning.*/d' $currDir/vimrc > $currDir/vimrc.new 
