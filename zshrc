@@ -165,3 +165,5 @@ twiki () {
   # say -v Zarvox 'beedee-beedee-beedee'
   rake db:migrate && rake db:migrate:redo && rake db:test:prepare
 }
+
+alias cucumber='cucumber --require features --require lib'
