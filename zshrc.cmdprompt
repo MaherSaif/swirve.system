@@ -15,7 +15,15 @@ function precmd {
   PR_FILLBAR=""
   PR_PWDLEN=""
 
-  local promptsize=${#${(%):---(%n@%m:%l)---()--}} 
+  if which git > /dev/null; then 
+    BRANCH=`git branch | awk '{ if (NF == 2)  print $2 }'`
+  fi
+
+  if which rvm > /dev/null; then 
+    local GEMSET=`rvm info | awk '{if (NF == 1 && /@/) print }'`
+  fi 
+
+  local promptsize=${#${():---(${GEMSET}${BRANCH})---()--}} 
   local pwdsize=${#${(%):-%~}}
 
   if [[ "$promptsize + $pwdsize" -gt $TERMWIDTH ]]; then
@@ -128,9 +136,17 @@ setprompt () {
     PR_APM=''
   fi
 
+  if which git > /dev/null; then 
+    PR_BRANCH=`git branch | awk '{ if (NF == 2)  print $2 }'`
+  fi
+
+  if which rvm > /dev/null; then 
+    PR_GEMSET=`rvm info | awk '{if (NF == 1 && /@/) print }'`
+  fi 
+
     PROMPT='$PR_SET_CHARSET$PR_STITLE${(e)PR_TITLEBAR}\
 $PR_CYAN$PR_SHIFT_IN$PR_ULCORNER$PR_BLUE$PR_HBAR$PR_SHIFT_OUT\
-($PR_GREEN%(!.%SROOT%s.%n)$PR_GREEN@%m:%l$PR_BLUE)\
+($PR_GREEN$PR_GEMSET$PR_BRANCH$PR_BLUE)\
 $PR_SHIFT_IN$PR_HBAR$PR_CYAN$PR_HBAR${(e)PR_FILLBAR}$PR_BLUE$PR_HBAR$PR_SHIFT_OUT\
 ( $PR_MAGENTA%$PR_PWDLEN<...<%~%<<$PR_BLUE)\
 $PR_SHIFT_IN$PR_HBAR$PR_CYAN$PR_URCORNER$PR_SHIFT_OUT\
