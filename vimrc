@@ -293,3 +293,6 @@ endif
 "colorscheme ir_dark
 
 "autocmd User ~/git/some_folder/* call Tabstyle_spaces() | let g:force_xhtml=1
+
+" play nice with rvm https://rvm.beginrescueend.com/integration/vim/
+set shell=/bin/sh
