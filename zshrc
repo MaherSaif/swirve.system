@@ -3,7 +3,12 @@ if [ -x /usr/libexec/path_helper ]; then
       eval `/usr/libexec/path_helper -s`
 fi
 
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:$PATH:/Library/PostgreSQL/9.0/bin
+# http://aws.amazon.com/developertools/2928
+export AWS_RDS_HOME=/usr/local/RDSCli-1.4.006
+export AWS_CREDENTIAL_FILE=~/aws-credential-file
+export JAVA_HOME=/Library/Java/Home
+
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:$PATH:/Library/PostgreSQL/9.0/bin:$AWS_RDS_HOME/bin
 #     ~/bin                               \
 #     ~/usr/bin                           \
 #     /usr/local/bin                      \
