@@ -16,14 +16,18 @@ function precmd {
   PR_PWDLEN=""
 
   if which git > /dev/null; then 
-    BRANCH=`git branch | awk '{ if (NF == 2)  print $2 }'`
-  fi
-
-  if which rvm > /dev/null; then 
-    local GEMSET=`rvm info | awk '{if (NF == 1 && /@/) print }'`
+    PR_BRANCH=`git branch | awk '{ if (NF == 2)  print $2 }'`
+  else 
+    PR_BRANCH=''
   fi 
 
-  local promptsize=${#${():---(${GEMSET}${BRANCH})---()--}} 
+  if which rvm > /dev/null; then 
+    PR_GEMSET=`rvm info | awk '{if (NF == 1 && /@/) print }'`
+  else 
+    PR_GEMSET=''
+  fi 
+
+  local promptsize=${#${():---(${PR_GEMSET}${PR_BRANCH})---()--}} 
   local pwdsize=${#${(%):-%~}}
 
   if [[ "$promptsize + $pwdsize" -gt $TERMWIDTH ]]; then
@@ -138,10 +142,14 @@ setprompt () {
 
   if which git > /dev/null; then 
     PR_BRANCH=`git branch | awk '{ if (NF == 2)  print $2 }'`
-  fi
+  else 
+    PR_BRANCH=''
+  fi 
 
   if which rvm > /dev/null; then 
     PR_GEMSET=`rvm info | awk '{if (NF == 1 && /@/) print }'`
+  else 
+    PR_GEMSET=''
   fi 
 
     PROMPT='$PR_SET_CHARSET$PR_STITLE${(e)PR_TITLEBAR}\

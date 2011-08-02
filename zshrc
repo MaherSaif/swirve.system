@@ -150,7 +150,6 @@ export LSCOLORS=exfxcxdxbxexexabagacad
 #export MY_LS_COLORS="${MY_LS_COLORS:-LS_COLORS_BOLD}"
 #eval export LS_COLORS=\${$MY_LS_COLORS}
 
-source ~/.zshrc.cmdprompt
 
 #rvm installation
 #http://rvm.beginrescueend.com/
@@ -172,3 +171,5 @@ twiki () {
 }
 
 alias cucumber='cucumber --require features --require lib'
+
+source ~/.zshrc.cmdprompt
