@@ -167,6 +167,14 @@ map <down> gj
 map j gj
 imap <down> <C-o>gj
 map E ge
+" Use CTR to move between split windows
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+" use space to search
+map <space> /
+map <C-space> ?
 
 map <Leader>p <C-^> " Go to previous file
 
@@ -210,7 +218,7 @@ let NERDCreateDefaultMappings=0 " I turn this off to make it simple
 " Toggle commenting on 1 line or all selected lines. Wether to comment or not
 " is decided based on the first line; if it's not commented then all lines
 " will be commented
-:map <Leader>c :call NERDComment(0, "toggle")<CR> 
+:map <Leader>c :call NERDComment(0, "toggle")<CR><ESC>
 
 
 " SnippetsEmu *****************************************************************
@@ -272,7 +280,7 @@ map <Leader>rs :RS<CR>
 " |                               Startup                                     |
 " -----------------------------------------------------------------------------  
 " Open NERDTree on start
-"autocmd VimEnter * exe 'NERDTree' | wincmd l 
+autocmd VimEnter * exe 'NERDTree' | wincmd l 
 
 
 
