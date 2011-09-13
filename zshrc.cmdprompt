@@ -22,7 +22,7 @@ function precmd {
   fi 
 
   if which rvm > /dev/null; then 
-    PR_GEMSET=`rvm info 2> /dev/null | awk '{if (NF == 2 && /@/) print }'`
+    PR_GEMSET=`rvm info 2> /dev/null | awk '{if (NF == 1 && /@/) print }'`
   else 
     PR_GEMSET=''
   fi 
