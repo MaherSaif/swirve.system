@@ -304,3 +304,5 @@ endif
 
 " play nice with rvm https://rvm.beginrescueend.com/integration/vim/
 set shell=/bin/sh
+
+iabbrev busienss business
